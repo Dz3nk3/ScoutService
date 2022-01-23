@@ -1,0 +1,53 @@
+﻿@model ScoutSluzba.Web.ViewModels.OcjeneiKomentariUrediVM
+@using ScoutSluzba.Web.ViewModels;
+@using ScoutSluzba.Data.EntityModels;
+
+
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+
+<div class="content-wrapper p-4">
+    <h1 class="display-4">Uredi Ocjenu i Komentar</h1>
+
+    <form asp-action="Snimi">
+        <input asp-for="OcjenaKomentarID" hidden />
+
+        <div class="form-group">
+
+            <div class="form-group">
+                <label>Ocjena</label>
+                <input asp-for="Ocjena" class="form-control" />
+                <span asp-validation-for="Ocjena" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Komentar</label>
+                <input asp-for="Komentar" class="form-control" />
+                <span asp-validation-for="Komentar" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label>Zaposlenik </label>
+                <select asp-for="ZaposlenikID" asp-items="Model.Zaposlenik" class="form-control"></select>
+                <span asp-validation-for="ZaposlenikID" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label>Igrac </label>
+                <select asp-for="IgracID" asp-items="Model.Igrac" class="form-control"></select>
+                <span asp-validation-for="IgracID" class="text-danger"></span>
+
+            </div>
+
+            <input type="submit" class="btn btn-success btn-lg" value="Snimi" />
+
+        </div>
+    </form>
+</div>
+
+
+

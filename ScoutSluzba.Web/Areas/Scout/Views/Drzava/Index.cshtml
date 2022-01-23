@@ -1,0 +1,37 @@
+﻿@using ScoutSluzba.Web.ViewModels
+@*@using ScoutSluzba.Web.Areas.Scout.ViewModels*@
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Drzava</h1>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Naziv</th>
+            <th>Oznaka</th>
+            <th>Akcija</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.rows)
+        {
+            <tr>
+                <td>@x.Naziv</td>
+                <td>@x.Oznaka</td>
+                <td>
+                    <a asp-action="Obrisi" asp-controller="Drzava" asp-area="AdministratorModul" asp-route-id="@x.DrzavaID" class="btn btn-outline-danger btn-sm">Obrisi<i class="fa fa-trash"></i></a>
+
+                    <a asp-action="Uredi" asp-controller="Drzava" asp-area="AdministratorModul" asp-route-id="@x.DrzavaID" class="btn btn-outline-primary btn-sm">Uredi<i class="fa fa-pen"></i></a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+<a asp-action="Dodaj" asp-controller="Drzava" asp-area="AdministratorModul" class="btn btn-outline-success btn-lg"> Dodaj Drzavu </a>
+

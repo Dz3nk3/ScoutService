@@ -1,0 +1,62 @@
+﻿@model ScoutSluzba.Web.ViewModels.TimoviInfoVM
+@using ScoutSluzba.Web.ViewModels;
+@using ScoutSluzba.Data.EntityModels;
+
+
+@{
+    ViewData["Title"] = "Info";
+}
+
+<div class="content-wrapper p-4">
+    <h1 class="display-4">Info Tima</h1>
+
+    <form asp-action="Snimi">
+        <input asp-for="TimID" hidden />
+
+        <div class="form-group">
+
+            <div class="form-group">
+                <label>Naziv</label>
+                <input asp-for="Naziv" class="form-control" readonly />
+                <span asp-validation-for="Naziv" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Trener</label>
+                <input asp-for="Trener" class="form-control" readonly />
+                <span asp-validation-for="Trener" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Stadion</label>
+                <input asp-for="Stadion" class="form-control" readonly />
+                <span asp-validation-for="Stadion" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label>Manager</label>
+                <input asp-for="Manager" class="form-control" readonly />
+                <span asp-validation-for="Manager" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label>Predsjednik</label>
+                <input asp-for="Predsjednik" class="form-control" readonly />
+                <span asp-validation-for="Predsjednik" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label>Liga</label>
+                <input asp-for="Liga" class="form-control" readonly />
+                <span asp-validation-for="Liga" class="text-danger"></span>
+            </div>
+
+
+
+        </div>
+    </form>
+</div>
+

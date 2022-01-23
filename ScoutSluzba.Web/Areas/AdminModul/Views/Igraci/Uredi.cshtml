@@ -1,0 +1,139 @@
+﻿@model ScoutSluzba.Web.ViewModels.IgracUrediVM
+@using ScoutSluzba.Web.ViewModels;
+@using ScoutSluzba.Data.EntityModels;
+
+
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+
+
+<div class="content-wrapper p-4">
+    <h1 class="display-4">Uredi Igraca</h1>
+
+    <form asp-action="Snimi">
+        <input asp-for="IgracID" hidden />
+
+        <div class="form-group">
+
+            <div class="form-group">
+                <label>Ime</label>
+                <input asp-for="Ime" class="form-control" />
+                <span asp-validation-for="Ime" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Prezime</label>
+                <input asp-for="Prezime" class="form-control" />
+                <span asp-validation-for="Prezime" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Visina</label>
+                <input asp-for="Visina" class="form-control" />
+                <span asp-validation-for="Visina" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label>Tezina</label>
+                <input asp-for="Tezina" class="form-control" />
+                <span asp-validation-for="Tezina" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label>Datum rodjenja</label>
+                <input asp-for="Datum_rodjenja" class="form-control" />
+                <span asp-validation-for="Datum_rodjenja" class="text-danger"></span>
+
+            </div>
+
+            @*kategorija------------------------------------------------------------*@
+            <hr>
+            <h2 class="display-6"> Kategorija</h2>
+            <hr>
+            <div class="form-group">
+                <label>Oznaka</label>
+                <input asp-for="Oznaka" class="form-control" />
+                <span asp-validation-for="Oznaka" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Pozicija</label>
+                <input asp-for="Pozicija" class="form-control" />
+                <span asp-validation-for="Pozicija" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Opis</label>
+                <input asp-for="Opis" class="form-control" />
+                <span asp-validation-for="Opis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Dob</label>
+                <input asp-for="Dob" class="form-control" />
+                <span asp-validation-for="Dob" class="text-danger"></span>
+            </div>
+
+            @*kategorija------------------------------------------------------------*@
+
+
+
+            @*Specifikacija------------------------------------------------------------*@
+            <hr>
+            <h2 class="display-6"> Kategorija</h2>
+            <hr>
+
+            <div class="form-group">
+                <label>Broj Pogodaka</label>
+                <input asp-for="BrojPogodaka" class="form-control" />
+                <span asp-validation-for="BrojPogodaka" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Broj Kornera</label>
+                <input asp-for="BrojKornera" class="form-control" />
+                <span asp-validation-for="BrojKornera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Broj Slobodnih</label>
+                <input asp-for="BrojSlobodnih" class="form-control" />
+                <span asp-validation-for="BrojSlobodnih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Broj Offside</label>
+                <input asp-for="BrOffside" class="form-control" />
+                <span asp-validation-for="BrOffside" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Crveni Karton</label>
+                <input asp-for="CrveniKarton" class="form-control" />
+                <span asp-validation-for="CrveniKarton" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Zuti Karton</label>
+                <input asp-for="ZutiKarton" class="form-control" />
+                <span asp-validation-for="ZutiKarton" class="text-danger"></span>
+            </div>
+            @*Specifikacija------------------------------------------------------------*@
+
+
+            <div class="form-group">
+                <label>Grad </label>
+                <select asp-for="GradID" asp-items="Model.Grad" class="form-control"></select>
+                <span asp-validation-for="GradID" class="text-danger"></span>
+
+            </div>
+
+
+            <div class="form-group">
+                <label>Team </label>
+                <select asp-for="TeamID" asp-items="Model.Team" class="form-control"></select>
+                <span asp-validation-for="TeamID" class="text-danger"></span>
+
+            </div>
+
+            <input type="submit" class="btn btn-success btn-lg" value="Snimi" />
+
+        </div>
+    </form>
+</div>

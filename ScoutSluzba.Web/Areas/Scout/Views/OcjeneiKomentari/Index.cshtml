@@ -1,0 +1,43 @@
+﻿@using ScoutSluzba.Web.ViewModels
+@*@using ScoutSluzba.Web.Areas.Scout.ViewModels*@ 
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Scout/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Ocjene i Komentari</h1>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Ocjena</th>
+            <th>Komentar</th>
+            <th>Zaposlenik</th>
+            <th>Igrac</th>
+            <th>Akcija</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.row)
+        {
+            <tr>
+                <td>@x.Ocjena</td>
+                <td>@x.Komentar</td>
+                <td>@x.Zaposlenik</td>
+                <td>@x.Igrac</td>
+                <td>
+                    <a asp-action="Obrisi" asp-controller="OcjeneiKomentari" asp-area="OcjeneiKomentari" asp-route-id="@x.OcjenaKomentarID" class="btn btn-outline-danger btn-sm">Obrisi<i class="fa fa-trash"></i></a>
+                  
+                    <a asp-action="Uredi" asp-controller="OcjeneiKomentari" asp-area="OcjeneiKomentari" asp-route-id="@x.OcjenaKomentarID" class="btn btn-outline-info btn-sm">Uredi<i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+<a asp-action="Dodaj" asp-controller="OcjeneiKomentari" asp-area="OcjeneiKomentari" class="btn btn-outline-success btn-lg"> Dodaj Ligu </a>
+
+

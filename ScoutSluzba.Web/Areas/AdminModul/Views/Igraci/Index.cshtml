@@ -1,0 +1,50 @@
+﻿@using ScoutSluzba.Web.ViewModels
+
+@{
+    ViewData["Title"] = "Index";
+    //IgracIndexVM ulazniModel = (IgracIndexVM)ViewData["ulazniModel"];
+}
+
+<h1>Igraci</h1>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Visina</th>
+            <th>Tezina</th>
+            <th>Datum rodjenja</th>
+            <th>GradID</th>
+            <th>TeamID</th>
+            <th>Prosjek</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.igraci)
+        {
+            <tr>
+                <td>@x.Ime</td>
+                <td>@x.Prezime</td>
+                <td>@x.Visina</td>
+                <td>@x.Tezina</td>
+                <td>@x.DatumRodjenja</td>
+                <td>@x.Grad</td>
+                <td>@x.Team</td>
+                <td>@x.Prosjek</td>
+                <td>
+                    <a asp-action="Obrisi" asp-controller="Igraci" asp-area="AdministratorModul" asp-route-id="@x.IgracID" class="btn btn-outline-danger btn-sm">Obrisi<i class="fa fa-trash"></i></a>
+
+                    <a asp-action="Info" asp-controller="Igraci" asp-area="AdministratorModul" asp-route-id="@x.IgracID" class="btn btn-outline-primary btn-sm">Info<i class="fa fa-pen"></i></a>
+                    
+                    <a asp-action="Uredi" asp-controller="Igraci" asp-area="AdministratorModul" asp-route-id="@x.IgracID" class="btn btn-outline-primary btn-sm">Uredi<i class="fa fa-pen"></i></a>
+
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+<a asp-action="Dodaj" asp-controller="Igraci" asp-area="AdministratorModul" class="btn btn-outline-success btn-lg"> Dodaj Igraca </a>

@@ -1,0 +1,70 @@
+﻿@using ScoutSluzba.Web.ViewModels
+@model ScoutSluzba.Web.ViewModels.TimoviDodajVM
+
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<div class="content-wrapper p-4">
+    <h1 class="text-center"> Dodaj Tim: </h1>
+
+
+    <form asp-action="Snimi">
+        <input asp-for="TimID" hidden />
+
+        <div class="form-group">
+
+            <div>
+                @Html.HiddenFor(s => s.TimID)
+            </div>
+
+            <div class="form-group">
+                <label>Naziv: </label>
+                <input asp-for="Naziv" class="form-control" />
+                <span asp-validation-for="Naziv" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Trener: </label>
+                <input asp-for="Trener" class="form-control" />
+                <span asp-validation-for="Trener" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Stadion: </label>
+                <input asp-for="Stadion" class="form-control" />
+                <span asp-validation-for="Stadion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Manager: </label>
+                <input asp-for="Manager" class="form-control" />
+                <span asp-validation-for="Manager" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Predsjednik: </label>
+                <input asp-for="Predsjednik" class="form-control" />
+                <span asp-validation-for="Predsjednik" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label>Lokacija: </label>
+                <input asp-for="Lokacija" class="form-control" />
+                <span asp-validation-for="Lokacija" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label>Liga: </label>
+                <select asp-for="LigaID" asp-items="Model.Liga" class="form-control"></select>
+                <span asp-validation-for="LigaID" class="text-danger"></span>
+            </div>
+
+            <input type="submit" class="btn btn-outline-success btn-lg" value="Snimi" />
+        </div>
+    </form>
+</div>
+

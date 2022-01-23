@@ -1,0 +1,38 @@
+﻿@model ScoutSluzba.Web.ViewModels.DrzavaUrediVM
+@using ScoutSluzba.Web.ViewModels;
+@using ScoutSluzba.Data.EntityModels;
+
+
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+<div class="content-wrapper p-4">
+    <h1 class="display-4">Uredi Drzavu</h1>
+
+    <form asp-action="Snimi">
+        <input asp-for="DrzavaID" hidden />
+
+        <div class="form-group">
+
+            <div class="form-group">
+                <label>Naziv</label>
+                <input asp-for="Naziv" class="form-control" />
+                <span asp-validation-for="Naziv" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Oznaka</label>
+                <input asp-for="Oznaka" class="form-control" />
+                <span asp-validation-for="Oznaka" class="text-danger"></span>
+            </div>
+
+
+            <input type="submit" class="btn btn-success btn-lg" value="Snimi" />
+
+        </div>
+    </form>
+</div>
+
+
+

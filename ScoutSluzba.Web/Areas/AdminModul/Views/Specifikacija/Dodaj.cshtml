@@ -1,0 +1,62 @@
+﻿@using ScoutSluzba.Web.ViewModels
+@model ScoutSluzba.Web.ViewModels.SpecifikacijaDodajVM
+
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<div class="content-wrapper p-4">
+    <h1 class="text-center"> Dodaj Specifikaciju: </h1>
+
+    <form asp-action="Snimi">
+        <input asp-for="SpecifikacijaID" hidden />
+
+        <div class="form-group">
+
+            <div>
+                @Html.HiddenFor(s => s.SpecifikacijaID)
+            </div>
+
+            <div class="form-group">
+                <label>Broj Pogodaka: </label>
+                <input asp-for="BrojPogodaka" class="form-control" />
+                <span asp-validation-for="BrojPogodaka" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Broj Kornera: </label>
+                <input asp-for="BrojKornera" class="form-control" />
+                <span asp-validation-for="BrojKornera" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Broj Slobodnih: </label>
+                <input asp-for="BrojSlobodnih" class="form-control" />
+                <span asp-validation-for="BrojSlobodnih" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Broj Offside: </label>
+                <input asp-for="BrOffside" class="form-control" />
+                <span asp-validation-for="BrOffside" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Broj Crvenih kartona: </label>
+                <input asp-for="CrveniKarton" class="form-control" />
+                <span asp-validation-for="CrveniKarton" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Broj Zutih kartona: </label>
+                <input asp-for="ZutiKarton" class="form-control" />
+                <span asp-validation-for="ZutiKarton" class="text-danger"></span>
+            </div>
+
+
+
+
+            <input type="submit" class="btn btn-outline-success btn-lg" value="Snimi" />
+        </div>
+    </form>
+</div>

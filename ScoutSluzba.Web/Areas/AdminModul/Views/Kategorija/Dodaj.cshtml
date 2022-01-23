@@ -1,0 +1,50 @@
+﻿@using ScoutSluzba.Web.ViewModels
+@model ScoutSluzba.Web.ViewModels.KategorijaDodajVM
+
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<div class="content-wrapper p-4">
+    <h1 class="text-center"> Dodaj Kategoriju: </h1>
+
+    <form asp-action="Snimi">
+        <input asp-for="KategorijaID" hidden />
+
+        <div class="form-group">
+
+            <div>
+                @Html.HiddenFor(s => s.KategorijaID)
+            </div>
+
+            <div class="form-group">
+                <label>Oznaka: </label>
+                <input asp-for="Oznaka" class="form-control" />
+                <span asp-validation-for="Oznaka" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Pozicija: </label>
+                <input asp-for="Pozicija" class="form-control" />
+                <span asp-validation-for="Pozicija" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Opis: </label>
+                <input asp-for="Opis" class="form-control" />
+                <span asp-validation-for="Opis" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Dob: </label>
+                <input asp-for="Dob" class="form-control" />
+                <span asp-validation-for="Dob" class="text-danger"></span>
+            </div>
+
+           
+
+            <input type="submit" class="btn btn-outline-success btn-lg" value="Snimi" />
+        </div>
+    </form>
+</div>
+

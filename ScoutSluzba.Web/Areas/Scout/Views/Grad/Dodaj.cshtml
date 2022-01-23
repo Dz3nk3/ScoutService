@@ -1,0 +1,44 @@
+﻿@using ScoutSluzba.Web.ViewModels
+@model ScoutSluzba.Web.ViewModels.GradDodajVM
+
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+
+<div class="content-wrapper p-4">
+    <h1 class="text-center"> Dodaj Grad: </h1>
+
+    <form asp-action="Snimi">
+        <input asp-for="GradID" hidden />
+
+        <div class="form-group">
+
+            <div>
+                @Html.HiddenFor(s => s.GradID)
+            </div>
+
+            <div class="form-group">
+                <label>Naziv: </label>
+                <input asp-for="Naziv" class="form-control" />
+                <span asp-validation-for="Naziv" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Postanski Broj: </label>
+                <input asp-for="PostanskiBr" class="form-control" />
+                <span asp-validation-for="PostanskiBr" class="text-danger"></span>
+            </div>
+
+            
+
+            <div class="form-group">
+                <label>Drzava: </label>
+                <select asp-for="DrzavaID" asp-items="Model.Drzava" class="form-control"></select>
+                <span asp-validation-for="DrzavaID" class="text-danger"></span>
+            </div>
+
+            <input type="submit" class="btn btn-outline-success btn-lg" value="Snimi" />
+        </div>
+    </form>
+</div>
